@@ -6,6 +6,8 @@
 <script type="text/javascript" src="html5game/Chronicle Destiny.js?cachebust=410493495"></script>
 <script>window.onload = GameMaker_Init;</script>
 
+[Game Design Document](/docs)
+
 ## Controls
 
 | Action | Keyboard |
