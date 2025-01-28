@@ -1,5 +1,5 @@
-# Lyndi's Chronicle
 [<back](index.md)
+# Lyndi's Chronicle
 ## Table of Contents {#toc}
 - [Synopsis](#synopsis)
 - [Characters](#characters)
