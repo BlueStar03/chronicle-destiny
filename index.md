@@ -7,3 +7,7 @@
 <script>window.onload = GameMaker_Init;</script>
 
 ## Controls
+
+| Action | Keyboard |
+|--------|----------|
+| move   | WASD     |
