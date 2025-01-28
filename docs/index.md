@@ -1,6 +1,8 @@
 # Chronicle Destiny - Game Design Document
 
-## Intro
+## Overview
+
+**Chronicle Destiny** is a collection of short stories set in the world of *Threa*. The *Player* will control one of many characters and guide the thru a story, a *chronicle*. The *Player* will be presented with various options that have a meaningful impact on the *chronicle*'s outcome.  
 
 ## Gameplay
 
@@ -10,6 +12,6 @@
 
 ## Technology
 
-- Engine: GameMaker
+- **Engine**: GameMaker
 
 ## Development
