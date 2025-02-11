@@ -1,4 +1,6 @@
-# Chronicle Destiny - Game Design Document
+[<back](index.md)
+# GDD
+## Table of Contents {#toc}
 
 ## Overview
 
