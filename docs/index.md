@@ -1,4 +1,3 @@
-[<back](index.md)
 # GDD
 ## Table of Contents {#toc}
 
