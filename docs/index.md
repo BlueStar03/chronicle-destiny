@@ -1,5 +1,4 @@
-# Game Design Document Chronicle Destiny
-## Table of Contents {#toc}
+# GDD
 
 ## Overview
 
