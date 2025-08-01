@@ -14,21 +14,3 @@ title: Chronicle Destiny - Alpha
 
 ---
 
-<nav class="sidebar">
-  <ul>
-    {%- assign grouped = site.docs | group_by_exp:"doc", "doc.path | split: '/' | slice: 1, 1" -%}
-    {%- for folder in grouped -%}
-      <li>
-        <strong>{{ folder.name | capitalize }}</strong>
-        <ul>
-          {%- assign sorted = folder.items | sort: "path" -%}
-          {%- for doc in sorted -%}
-            <li>
-              <a href="{{ doc.url }}">{{ doc.data.title | default: doc.name }}</a>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </li>
-    {%- endfor -%}
-  </ul>
-</nav>
