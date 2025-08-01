@@ -1,5 +1,5 @@
 ---
-title: Chronicle Destiny
+title: Chronicle Destiny - Alpha
 ---
 
 # Chronicle Destiny - Alpha
