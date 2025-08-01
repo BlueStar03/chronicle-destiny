@@ -1,0 +1,59 @@
+remote_theme: zbule/bluestar-theme
+
+plugins:
+  - jekyll-remote-theme
+
+font_base: 16px
+panel_width: 22em
+accent_color: blue
+content_max: 68em  
+
+
+#markdown: kramdown
+#kramdown:
+#  auto_ids: true
+#  toc_levels: 2..3   # H2 and H3
+
+
+# Dynamic sidebar navigation
+#nav:
+#  - title: .🏠 Home
+#    url: /
+#  - title: 📜 Readme
+#    url: /README.html
+#  - title: 🛠️ About
+#    url: /about
+#  - title: 🗺️ Roadmap
+#    url: /roadmap
+
+# Social links appear in the left sidebar footer.
+# Each item needs:
+# - title: for the tooltip
+# - url: the full link
+# - icon: Font Awesome class (e.g. 'fab fa-twitter')
+
+#social:
+#  - title: DeviantArt
+#    url: https://deviantart.com/zbule
+#    icon: fab fa-deviantart
+  # - title: Instagram
+  #   url: https://instagram.com/zbule
+  #   icon: fab fa-instagram
+  # - title: BlueSky
+  #   url: https://bsky.app/profile/zbule.xyz
+  #   icon: fa-brands fa-bluesky
+  # - title: Twitter
+  #   url: https://twitter.com/zBuLe
+  #   icon: fab fa-twitter
+  # - title: itch.io
+  #   url: https://zbule.itch.io
+  #   icon: fa-brands fa-itch-io
+  # - title: Twitch
+  #   url: https://twitch.tv/zbule
+  #   icon: fab fa-twitch
+  # - title: YouTube
+  #   url: https://youtube.com/@bluestar03
+  #   icon: fab fa-youtube
+  # - title: Ko-fi
+  #   url: https://ko-fi.com/zbule
+  #   icon: fa-solid fa-mug-hot
