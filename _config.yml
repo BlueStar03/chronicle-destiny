@@ -8,6 +8,12 @@ panel_width: 22em
 accent_color: blue
 content_max: 68em  
 
+collections:
+  docs:
+    output: true
+    permalink: /docs/:path/
+
+
 
 #markdown: kramdown
 #kramdown:
