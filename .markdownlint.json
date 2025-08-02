@@ -15,5 +15,9 @@
     },
     "no-inline-html": {
         "allowed_elements": ["br","div","canvas","p","script"]
+    },
+    "no-trailing-punctuation": {
+        "punctuation": ".,;:。，；："
     }
+
 }

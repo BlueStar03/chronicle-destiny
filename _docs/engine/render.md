@@ -1,5 +1,0 @@
----
-title: Rendering Basics
----
-# Rendering
-...
