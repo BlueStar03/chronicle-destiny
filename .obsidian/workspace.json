@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2025-08-01-how-to-write-a-blog.md",
+                "file": "posts.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-08-01-how-to-write-a-blog"
+              "title": "posts"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2025-08-01-how-to-write-a-blog.md",
+                "file": "posts.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2025-08-01-how-to-write-a-blog"
+              "title": "Backlinks for posts"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2025-08-01-how-to-write-a-blog.md",
+                "file": "posts.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2025-08-01-how-to-write-a-blog"
+              "title": "Outgoing links from posts"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2025-08-01-how-to-write-a-blog.md",
+                "file": "posts.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2025-08-01-how-to-write-a-blog"
+              "title": "Outline of posts"
             }
           }
         ]
@@ -170,6 +170,7 @@
   },
   "active": "b3840cc90686b949",
   "lastOpenFiles": [
+    "_posts/2025-08-01-how-to-write-a-blog.md",
     "about.md",
     "roadmap.md",
     "changelog.md",

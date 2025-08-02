@@ -2,7 +2,7 @@
 title: Changelog
 ---
 
-# Changlog
+# 🗂️ Changelog
 
 <ul>
 {% assign posts = site.devlog | sort: 'path' | reverse %}

@@ -2,6 +2,8 @@
 title: Devlog - Index
 ---
 
+# 🛠️ Devlog
+
 <ul>
 {% assign posts = site.devlog | sort: 'path' | reverse %}
 {% for entry in posts %}

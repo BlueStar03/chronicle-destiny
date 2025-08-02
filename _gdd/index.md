@@ -2,7 +2,7 @@
 title: Game Design Doc
 ---
 
-# Game Design Doc
+# 📚 Game Design Doc
 
 <ul>
 {% assign posts = site.devlog | sort: 'path' | reverse %}
