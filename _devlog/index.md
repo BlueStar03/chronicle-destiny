@@ -1,5 +1,5 @@
 ---
-title: Devlog
+title: Devlog - Index
 ---
 
 <ul>

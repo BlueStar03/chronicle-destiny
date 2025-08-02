@@ -35,7 +35,7 @@ nav:
     url: /changelog
   - title: 🗺️ Roadmap
     url: /roadmap
-  - title: about
+  - title: ℹ️ About
     url: /about
 
 
@@ -47,6 +47,23 @@ collections:
   gdd:
     output: true
     permalink: /gdd/:name
+
+
+defaults:
+  # Apply default layout to devlog collection
+  - scope:
+      path: ""
+      type: devlog
+    values:
+      layout: default
+
+  # Apply default layout to gdd collection
+  - scope:
+      path: ""
+      type: gdd
+    values:
+      layout: default
+
     
 
 #  - title: 📜 Readme
