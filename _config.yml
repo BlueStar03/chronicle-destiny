@@ -29,12 +29,15 @@ nav:
     url: /
   - title: 📚 GDD
     url: /gdd
-  - title: "🛠️ Devlog"
+  - title: 🛠️ Devlog
     url: /devlog
-  - title: "🗂️ Changelog"
+  - title: 🗂️ Changelog
     url: /changelog
-  - title: "🗺️ Roadmap"
+  - title: 🗺️ Roadmap
     url: /roadmap
+  - title: about
+    url: /about
+
 
 
 collections:
