@@ -22,9 +22,12 @@ collections:
 
 
 # Dynamic sidebar navigation
-#nav:
-#  - title: .🏠 Home
-#    url: /
+nav:
+  - title: 🏠 Home
+    url: /
+  - title: 📖 Posts     
+    url: /posts
+
 #  - title: 📜 Readme
 #    url: /README.html
 #  - title: 🛠️ About
