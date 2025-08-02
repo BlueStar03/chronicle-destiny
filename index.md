@@ -4,7 +4,7 @@ title: Chronicle Destiny - Alpha
 
 # Chronicle Destiny - Alpha
 
-<div class="gm4html5_div_class" id="gm4html5_div_id">
+<div class="gm4html5_div_class center" id="gm4html5_div_id">
   <canvas id="canvas" width="640" height="360" >
     <p>Your browser doesn't support HTML5 canvas.</p>
   </canvas>
@@ -13,4 +13,3 @@ title: Chronicle Destiny - Alpha
 <script>window.onload = GameMaker_Init;</script>  
 
 ---
-
