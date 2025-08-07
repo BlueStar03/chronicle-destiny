@@ -3,51 +3,5 @@ title: Chronicle Destiny
 description: Documentation for the development of Chronicle Destiny
 remote_theme: BlueStar03/theme
 
-# Should the TOC include <h1>? (read by toc.js)
-toc-include-h1: true
-
-logo: "/assets/images/logo.svg"
-
-# Collections (if you have any; optional)
-collections:
-  gdd:
-    output: true
-  tutorials:
-    output: true
-
-# Simple nav menu — drives left-panel.html
-nav:
-  - title: "Home"
-    url: /
-
-  - title: "GDD"
-    url: /gdd/
-
-  - title: "Tutorials"
-    url: /tutorials/
-
-  - title: "Devlog"
-    url: /posts/
-
-  - title: "About"
-    url: /about/
-
-# Social links — used in footer.html
-social:
-  - title: DeviantArt
-    url: https://deviantart.com/zbule
-    icon: "🖼️"
-
-  - title: Twitter
-    url: https://twitter.com/yourhandle
-    icon: "🐦"
-
-  - title: GitHub
-    url: https://github.com/yourhandle
-    icon: "🐙"
-
-# Layout-related variables
-panel_width: 22em
-accent_color: cornflowerblue
-content_max: 68em
-font_base: 16px
+plugins:
+  - jekyll-remote-theme
