@@ -10,10 +10,10 @@ panel_width: 22em
 accent_color: blue
 content_max: 68em  
 
-collections:
-  docs:
-    output: true
-    permalink: /docs/:path/
+#collections:
+#  docs:
+#    output: true
+#    permalink: /docs/:path/
 
 
 
@@ -40,13 +40,13 @@ nav:
 
 
 
-collections:
-  devlog:
-    output: true
-    permalink: /devlog/:name
-  gdd:
-    output: true
-    permalink: /gdd/:name
+#collections:
+#  devlog:
+#    output: true
+#    permalink: /devlog/:name
+#  gdd:
+#    output: true
+#    permalink: /gdd/:name
 
 
 defaults:
@@ -64,7 +64,18 @@ defaults:
     values:
       layout: default
 
-    
+social:
+  - title: DeviantArt
+    url: https://deviantart.com/zbule
+    icon: fab fa-deviantart
+
+  - title: Twitter
+    url: https://twitter.com/yourhandle
+    icon: "🐦"
+
+  - title: GitHub
+    url: https://github.com/yourhandle
+    icon: "🐙"    
 
 #  - title: 📜 Readme
 #    url: /README.html
