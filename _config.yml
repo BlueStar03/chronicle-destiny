@@ -1,73 +1,42 @@
-title: Chronicle Destiny
-description: Documentation for the development of Chronicle Destiny
-remote_theme: BlueStar03/theme
+# Site settings
+title: BlueStar theme
+author: zbule
+description: test theme for Jekyll
 
-plugins:
-  - jekyll-remote-theme
+# Should the TOC include <h1>? (read by toc.js)
+toc-include-h1: true
 
-font_base: 16px
-panel_width: 22em
-accent_color: blue
-content_max: 68em  
+logo: "/assets/images/logo.svg"
 
-#collections:
-#  docs:
-#    output: true
-#    permalink: /docs/:path/
+# Collections (if you have any; optional)
+collections:
+  gdd:
+    output: true
+  tutorials:
+    output: true
 
-
-
-#markdown: kramdown
-#kramdown:
-#  auto_ids: true
-#  toc_levels: 2..3   # H2 and H3
-
-
-# Dynamic sidebar navigation
+# Simple nav menu — drives left-panel.html
 nav:
-  - title: 🏠 Home
+  - title: "Home"
     url: /
-  - title: 📚 GDD
-    url: /gdd
-  - title: 🛠️ Devlog
-    url: /devlog
-  - title: 🗂️ Changelog
-    url: /changelog
-  - title: 🗺️ Roadmap
-    url: /roadmap
-  - title: ℹ️ About
-    url: /about
 
+  - title: "GDD"
+    url: /gdd/
 
+  - title: "Tutorials"
+    url: /tutorials/
 
-#collections:
-#  devlog:
-#    output: true
-#    permalink: /devlog/:name
-#  gdd:
-#    output: true
-#    permalink: /gdd/:name
+  - title: "Devlog"
+    url: /posts/
 
+  - title: "About"
+    url: /about/
 
-defaults:
-  # Apply default layout to devlog collection
-  - scope:
-      path: ""
-      type: devlog
-    values:
-      layout: default
-
-  # Apply default layout to gdd collection
-  - scope:
-      path: ""
-      type: gdd
-    values:
-      layout: default
-
+# Social links — used in footer.html
 social:
   - title: DeviantArt
     url: https://deviantart.com/zbule
-    icon: fab fa-deviantart
+    icon: "🖼️"
 
   - title: Twitter
     url: https://twitter.com/yourhandle
@@ -75,43 +44,10 @@ social:
 
   - title: GitHub
     url: https://github.com/yourhandle
-    icon: "🐙"    
+    icon: "🐙"
 
-#  - title: 📜 Readme
-#    url: /README.html
-#  - title: 🛠️ About
-#    url: /about
-#  - title: 🗺️ Roadmap
-#    url: /roadmap
-
-# Social links appear in the left sidebar footer.
-# Each item needs:
-# - title: for the tooltip
-# - url: the full link
-# - icon: Font Awesome class (e.g. 'fab fa-twitter')
-
-#social:
-#  - title: DeviantArt
-#    url: https://deviantart.com/zbule
-#    icon: fab fa-deviantart
-  # - title: Instagram
-  #   url: https://instagram.com/zbule
-  #   icon: fab fa-instagram
-  # - title: BlueSky
-  #   url: https://bsky.app/profile/zbule.xyz
-  #   icon: fa-brands fa-bluesky
-  # - title: Twitter
-  #   url: https://twitter.com/zBuLe
-  #   icon: fab fa-twitter
-  # - title: itch.io
-  #   url: https://zbule.itch.io
-  #   icon: fa-brands fa-itch-io
-  # - title: Twitch
-  #   url: https://twitch.tv/zbule
-  #   icon: fab fa-twitch
-  # - title: YouTube
-  #   url: https://youtube.com/@bluestar03
-  #   icon: fab fa-youtube
-  # - title: Ko-fi
-  #   url: https://ko-fi.com/zbule
-  #   icon: fa-solid fa-mug-hot
+# Layout-related variables
+panel_width: 22em
+accent_color: cornflowerblue
+content_max: 68em
+font_base: 16px
