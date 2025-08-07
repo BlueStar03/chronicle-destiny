@@ -1,5 +1,6 @@
 ---
 title: Changelog
+date: 2025-08-01 12:00:00 -0700
 ---
 
 # 🗂️ Changelog
