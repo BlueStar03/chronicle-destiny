@@ -8,5 +8,9 @@ toc-include-h1: true
 colors:
   accent:    "#6495ed"   # link/buttons highlight
 
+nav:
+  - title: 🏠 Home
+    url: /
+
 plugins:
   - jekyll-remote-theme
