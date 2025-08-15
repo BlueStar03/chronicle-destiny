@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_diffuse",
+  "name":"shd_diffuse",
+  "parent":{
+    "name":"Assets",
+    "path":"folders/Assets.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}
