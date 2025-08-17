@@ -11,7 +11,7 @@ for (var i=0; i<room_width;i+=ts){
 		if((i%td==0&&j%td==0)||(i%td>0&&j%td>0)){ 
 			 col=c_green;
 		} else {
-			 col=c_lime;
+			 col=c_dkgray;
 		}
 		vertex_add_point(vbuffer,i,j,zv,,,,,,col);
 		vertex_add_point(vbuffer,i+ts,j,zv,,,,,,col);
