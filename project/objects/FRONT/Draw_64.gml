@@ -1,4 +1,5 @@
 story.draw();
 dbug.draw()
 var _string="ele: "+ string(camera.orbit.ele)+", dir: " + string(camera.orbit.dir)+", dist: "+string(camera.orbit.dist)
-draw_text(10,10,_string)
+_string+="\n "+string(camera.from.x)
+draw_text(10,25,_string)

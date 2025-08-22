@@ -16,7 +16,7 @@ vsp = 0;
 z=0;
 
 camera.focus=self
-camera.mode=camera_mode.orbit
+camera.mode="orbit";
 
 story.dialog.set_player_character(self);
 model= import_obj("sphere.obj",vformat);

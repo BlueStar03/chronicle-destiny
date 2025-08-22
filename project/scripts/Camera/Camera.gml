@@ -1,58 +1,136 @@
 enum camera_mode {
-	none,
-	orbit
+  none,
+  orbit
 }
 
 function Camera() constructor{
-	mode = camera_mode.none;
-	focus = noone;
-	from = {x:640/2 ,y:360, z: -360/2};
-	to = {x:640/2 ,y:360/2, z: 0};
-	up = {x:0 ,y:0, z: 1};
-	orbit = { dir: 45, dist: 256, ele: 35.264 };//30
+  mode = "none";
+  focus = noone;
+  
+  from = {x:640/2 ,y:360, z: -360/2};
+  to = {x:640/2 ,y:360/2, z: 0};
+  up = {x:0 ,y:0, z: 1};
+  
+  target={ 
+    from : {x:640/2 ,y:360, z: -360/2},
+    to : {x:640/2 ,y:360/2, z: 0},
+    up : {x:0 ,y:0, z: 1},
+  }
+  
+  offset = {
+    from : {x:0,y:128,z:-128},
+    to   : {x:0,y:0,z:0},
+    up   : {x:0 ,y:0, z: 1}
+  };
+  
+   
+	orbit = { dir: 45, dist: 256, ele: 35.264 };//30,45
+  free = { pitch: 0 , yaw: 0, roll: 0 };
 	snap=true;
 	
-	//pro_mat = matrix_build_projection_perspective_fov(45, window_get_width() / window_get_height(), 1, 32000);
-	pro_mat = matrix_build_projection_ortho( (window_get_width()/2) , (window_get_height()/2), 1, 32000);
+	pro_mat = matrix_build_projection_perspective_fov(45, window_get_width() / window_get_height(), 1, 32000);
+	//pro_mat = matrix_build_projection_ortho( (window_get_width()/2) , (window_get_height()/2), 1, 32000);
 	
 
 	update = function() {
 		switch (mode){
-			case camera_mode.none:
-				update_none();break;
-			case camera_mode.orbit:
-				update_orbit();break;
+      case "none":  update_none();  break;
+      case "orbit": update_orbit(); break;
+      case "fps":   update_free();   break;
 		}
+    
+    update_to_target();
 	}
 	
-	update_none=function(){
-		if (focus==noone){return;}
-		if (instance_exists(focus)) {
-			to.x = focus.x;
-			to.y = focus.y;
-			to.z = focus.z;
-		}else{focus=noone;}
-	}
-	update_orbit=function(){
-		if (focus==noone){mode=camera_mode.none; return;}
-		if (instance_exists(focus)){
-			to.x=focus.x;
-			to.y=focus.y;
-			to.z=focus.z;			
-		} else{
-			focus=noone;
-			mode=camera_mode.none;
-		}
-		orbit.dir=rollover_angle(orbit.dir);
-		orbit.ele=rollover_angle(orbit.ele);
-		var _ele=degtorad(orbit.ele+90); 
-		var _dist= orbit.dist; 
-		var _dir=degtorad(orbit.dir);
-		from.x = to.x + (_dist*sin(_ele)*cos(_dir));
-        from.y = to.y + (_dist*sin(_ele)*sin(_dir));
-        from.z = to.z +(_dist*cos(_ele));
-	}
+  update_none=function(from=true){
+    if (focus==noone){return;}
+    if (instance_exists(focus)) {
+      target.to.x = focus.x+offset.to.x;
+      target.to.y = focus.y+offset.to.y;
+      target.to.z = focus.z+offset.to.z;
+      if from{
+        target.from.x = focus.x+offset.from.x;
+        target.from.y = focus.y+offset.from.y;
+        target.from.z = focus.z+offset.from.z;
+      }
+    }else{focus=noone;}
+  }
+  
+	update_orbit = function() {
+    if (focus == noone) { mode = "none"; return; }
+    if (!instance_exists(focus)) { focus = noone; mode = "none"; return; }
+
+    // anchor (focus + offset)
+    target.to.x = focus.x + offset.to.x;
+    target.to.y = focus.y + offset.to.y;
+    target.to.z = focus.z + offset.to.z;
+
+    // keep angles tidy; avoid gimbal singularities at +/-90
+    orbit.dir = rollover_angle(orbit.dir);
+    orbit.ele = clamp(orbit.ele, -89.9, 89.9);
+
+    var dir  = degtorad(orbit.dir);
+    var ele  = degtorad(orbit.ele);
+    var r    = orbit.dist;
+
+    var offx = r * cos(ele) * cos(dir);
+    var offy = r * cos(ele) * sin(dir);
+    var offz = -r * sin(ele);   // minus because -Z is "up"
+
+    target.from.x = target.to.x + offx;
+    target.from.y = target.to.y + offy;
+    target.from.z = target.to.z + offz;
+
+    // world up is -Z for your setup
+    //target.up.x = 0; target.up.y = 0; target.up.z = -1;
+};
+
 	
+update_free = function() {
+    if (focus == noone) { mode = "none"; return; }
+    if (!instance_exists(focus)) { focus = noone; mode = "none"; return; }
+
+    // anchor position
+    target.from.x = focus.x + offset.from.x;
+    target.from.y = focus.y + offset.from.y;
+    target.from.z = focus.z + offset.from.z;
+
+    // angles → radians
+    var yaw   = degtorad(free.yaw);
+    var pitch = degtorad(free.pitch);
+
+    // forward vector (–Z up convention)
+    var fx = cos(pitch) * cos(yaw);
+    var fy = cos(pitch) * sin(yaw);
+    var fz = -sin(pitch); // minus so pitch+90 looks up toward –Z
+
+    target.to.x = target.from.x + fx;
+    target.to.y = target.from.y + fy;
+    target.to.z = target.from.z + fz;
+
+    // stable world up
+    target.up.x = 0;
+    target.up.y = 0;
+    target.up.z = -1;
+};
+
+
+  update_to_target=function(ease=0.1,complete=false){
+    ease=clamp(ease,0,1);
+    from.x= lerp(from.x,target.from.x,ease);
+    from.y= lerp(from.y,target.from.y,ease);
+    from.z= lerp(from.z,target.from.z,ease);
+    
+    to.x= lerp(to.x,target.to.x,ease);
+    to.y= lerp(to.y,target.to.y,ease);
+    to.z= lerp(to.z,target.to.z,ease);
+    
+    if complete{
+      up.x= lerp(up.x,target.up.x,ease);
+      up.y= lerp(up.y,target.up.y,ease);
+      up.z= lerp(up.z,target.up.z,ease);
+    } 
+  }
 
 
 rotate_orbit = function(val) {

@@ -38,6 +38,8 @@ x+=hsp;
 y+=vsp;
 
 //camera rotation 
+if !input.dialog{
   camera.rotate_orbit(input.rotate);
+}
 
 if keyboard_check_released(vk_tab){camera.snap=!camera.snap}
