@@ -1,20 +1,18 @@
 // Get Input
-var hsp = input.horizontal;
-var vsp = input.vertical;
+hsp = input.horizontal;
+vsp = input.vertical;
 
+//make it relative to the camera
 var input_dir = (point_direction(0,0,hsp,vsp))+90;
-var input_mag = point_distance(0,0,hsp,vsp)
-var cam_dir = point_direction(x,y,camera.from.x,camera.from.y)
+var input_mag = point_distance(0,0,hsp,vsp);
+var cam_dir   = point_direction(x, y, camera.from.x, camera.from.y);
+var char_dir  = cam_dir + input_dir;
 
-var char_dir= cam_dir+input_dir;
+//camera relative 
+hsp = lengthdir_x(input_mag, char_dir) * move_spd;
+vsp = lengthdir_y(input_mag, char_dir) * move_spd;
 
-hsp=lengthdir_x(input_mag,char_dir);
-vsp=lengthdir_y(input_mag,char_dir);
 
-
-// Velocity
-hsp*=move_spd;
-vsp*=move_spd;
 
 //collision
 if (hsp!=0){
@@ -37,9 +35,17 @@ if (vsp!=0){
 x+=hsp;
 y+=vsp;
 
+// facing direction
+if (hsp != 0 || vsp != 0) {
+    facing = point_direction(0,0,hsp, vsp);
+    facing=rollover_angle(facing);
+
+}
+
 //camera rotation 
 if !input.dialog{
   camera.rotate_orbit(input.rotate);
 }
 
 if keyboard_check_released(vk_tab){camera.snap=!camera.snap}
+  

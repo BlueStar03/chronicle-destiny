@@ -18,6 +18,8 @@
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"character.mtl","CopyToMask":-1,"filePath":"datafiles","name":"character.mtl","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"character.obj","CopyToMask":-1,"filePath":"datafiles","name":"character.obj","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"cube.obj","CopyToMask":-1,"filePath":"datafiles","name":"cube.obj","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"cube.obj.vbf","CopyToMask":-1,"filePath":"datafiles","name":"cube.obj.vbf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"player.mtl","CopyToMask":-1,"filePath":"datafiles","name":"player.mtl","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -51,6 +53,7 @@
     {"id":{"name":"vertex_add_point","path":"scripts/vertex_add_point/vertex_add_point.yy",},},
     {"id":{"name":"shd_default","path":"shaders/shd_default/shd_default.yy",},},
     {"id":{"name":"shd_diffuse","path":"shaders/shd_diffuse/shd_diffuse.yy",},},
+    {"id":{"name":"spr_character","path":"sprites/spr_character/spr_character.yy",},},
     {"id":{"name":"spr_dialog","path":"sprites/spr_dialog/spr_dialog.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},

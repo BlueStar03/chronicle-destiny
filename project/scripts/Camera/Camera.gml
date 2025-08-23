@@ -29,7 +29,7 @@ function Camera() constructor{
 	snap=true;
 	
 	pro_mat = matrix_build_projection_perspective_fov(45, window_get_width() / window_get_height(), 1, 32000);
-	//pro_mat = matrix_build_projection_ortho( (window_get_width()/2) , (window_get_height()/2), 1, 32000);
+	pro_mat = matrix_build_projection_ortho( (window_get_width()/2) , (window_get_height()/2), 1, 32000);
 	
 
 	update = function() {
@@ -115,7 +115,7 @@ update_free = function() {
 };
 
 
-  update_to_target=function(ease=0.1,complete=false){
+  update_to_target=function(ease=1,complete=false){
     ease=clamp(ease,0,1);
     from.x= lerp(from.x,target.from.x,ease);
     from.y= lerp(from.y,target.from.y,ease);

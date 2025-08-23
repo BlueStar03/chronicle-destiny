@@ -5,8 +5,8 @@ var zv=0.1
 vbuffer=vertex_create_buffer();
 vertex_begin(vbuffer,vformat)
 
-for (var i=0; i<room_width;i+=ts){
-	for(var j=0; j<room_height; j+=ts){
+for (var i=0; i<room_width*2;i+=ts){
+	for(var j=0; j<room_height*2; j+=ts){
     var col=c_red
 		if((i%td==0&&j%td==0)||(i%td>0&&j%td>0)){ 
 			 col=c_green;

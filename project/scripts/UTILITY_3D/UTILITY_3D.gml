@@ -49,3 +49,16 @@ function draw_model(vbuffer, texture, x, y, z, rx = 0, ry = 0, rz = 0, sx = 1, s
     // Restore
     matrix_set(matrix_world, matrix_build_identity());
 }
+
+
+/// angle_delta(a, b) → shortest signed delta (degrees) to go from a → b
+function angle_delta(a, b) {
+    // maps to (-180, 180]
+    return ((b - a + 540) mod 360) - 180;
+}
+
+/// angle_lerp(a, b, amt) → move a toward b by fraction amt (0..1)
+function angle_lerp(a, b, amt) {
+    amt = clamp(amt, 0, 1);
+    return a + angle_delta(a, b) * amt;
+}
