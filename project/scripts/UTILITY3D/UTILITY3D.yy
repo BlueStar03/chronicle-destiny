@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"UTILITIES",
+  "%Name":"UTILITY3D",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"UTILITIES",
+  "name":"UTILITY3D",
   "parent":{
     "name":"Code",
     "path":"folders/Code.yy",

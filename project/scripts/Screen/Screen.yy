@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"UTILITY_3D",
+  "%Name":"Screen",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"UTILITY_3D",
+  "name":"Screen",
   "parent":{
-    "name":"Code",
-    "path":"folders/Code.yy",
+    "name":"SYSTEM",
+    "path":"folders/Code/SYSTEM.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

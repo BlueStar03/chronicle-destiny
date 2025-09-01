@@ -43,8 +43,8 @@ draw=function(){
   
    if on {
       var radius=128;
-      var center_x=display.width/2;
-      var center_y=display.height/2
+      var center_x=screen.center.x;
+      var center_y=screen.center.y;
       var count = 3
       var step=360/count;
       var start=90;

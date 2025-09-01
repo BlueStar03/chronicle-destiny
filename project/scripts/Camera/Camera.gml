@@ -29,7 +29,7 @@ function Camera() constructor{
 	snap=true;
 	
 	pro_mat = matrix_build_projection_perspective_fov(45, window_get_width() / window_get_height(), 1, 32000);
-	pro_mat = matrix_build_projection_ortho( (window_get_width()/2) , (window_get_height()/2), 1, 32000);
+	//pro_mat = matrix_build_projection_ortho( (window_get_width()/2) , (window_get_height()/2), 1, 32000);
 	
 
 	update = function() {

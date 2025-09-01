@@ -20,7 +20,7 @@ camera.focus=self
 camera.mode="orbit";
 
 story.dialog.set_player_character(self);
-model= import_obj("character.obj",vformat);
+model= import_obj_ext("character.obj",vformat);
 texture=sprite_get_texture(spr_character,1);
 
 vx=0
@@ -30,3 +30,8 @@ accel    = 12;      // how quickly you speed up
 decel    = 16;      // how quickly you slow down when input stops
 max_spd  = 4;       // same as your old move_spd
 dead_eps = 0.001;   // snap-to-zero threshold
+
+
+
+
+replies= ["TOP", "next", "third","fourth","fifth","sixth","last", "El Ocho"]

@@ -6,6 +6,7 @@ function Dbug() constructor{
 		var xx=0;
 		var yy= window_get_height();
 		draw_text_outline(xx,yy,VERSION)
+    draw_text_outline(100,100,platform,platform.color)
 	}
 
 }

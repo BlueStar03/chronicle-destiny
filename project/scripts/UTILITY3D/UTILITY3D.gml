@@ -34,13 +34,9 @@ function vertex_add_point(vbuffer, xx, yy, zz, nx=0, ny=0, nz=1, uu=0, vv=0, col
 /// @function draw_model(vbuffer, texture, x, y, z, [rx=0], [ry=0], [rz=0], [sx=1], [sy=1], [sz=1])
 /// @desc Draw a vertex buffer with transform; scale is internally multiplied by (-8, 8, 8).
 function draw_model(vbuffer, texture, x, y, z, rx = 0, ry = 0, rz = 0, sx = 1, sy = 1, sz = 1) {
-    // Internal scale rule: (-8, 8, 8) * (sx, sy, sz)
-    var _sx = -8 * sx;
-    var _sy =  8 * sy;
-    var _sz =  8 * sz;
 
     // Build and apply world matrix
-    var _m = matrix_build(x, y, z, rx, ry, rz, _sx, _sy, _sz);
+    var _m = matrix_build(x, y, z, rx, ry, rz, sx, sy, sz);
     matrix_set(matrix_world, _m);
 
     // Draw
@@ -50,15 +46,3 @@ function draw_model(vbuffer, texture, x, y, z, rx = 0, ry = 0, rz = 0, sx = 1, s
     matrix_set(matrix_world, matrix_build_identity());
 }
 
-
-/// angle_delta(a, b) → shortest signed delta (degrees) to go from a → b
-function angle_delta(a, b) {
-    // maps to (-180, 180]
-    return ((b - a + 540) mod 360) - 180;
-}
-
-/// angle_lerp(a, b, amt) → move a toward b by fraction amt (0..1)
-function angle_lerp(a, b, amt) {
-    amt = clamp(amt, 0, 1);
-    return a + angle_delta(a, b) * amt;
-}
