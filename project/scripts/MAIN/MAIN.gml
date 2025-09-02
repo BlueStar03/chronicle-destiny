@@ -1,10 +1,13 @@
 #macro vMAJOR 0
 #macro vMINOR 1
 #macro vPATCH 0
-#macro vCANARY 1
-#macro vTAG ""
-#macro VERSION "v" + string(vMAJOR) + "." + string(vMINOR) + "." + string(vPATCH)+ "." +string(vCANARY)
-//Tags: a=alpha, b= beta, 
+#macro vBUILD 1
+#macro vTAG "dev"
+#macro VERSION "v"+string(vMAJOR)+"."+string(vMINOR)+"."+string(vPATCH)+"."+string(vBUILD)+(string_length(vTAG)>0?"-"+string(vTAG):"")
+#macro nVERSION (vMAJOR*1000000 + vMINOR*10000 + vPATCH*100 + vBUILD)
+// Tags: a: Alpha | b: Beta | rc: Release Candidate | dev: | GOLD: Final, stable release
+
+
 #macro	c_random make_color_rgb(irandom(255),irandom(255),irandom(255))
 #macro c_cornflowerblue #6495ed
 
@@ -25,13 +28,12 @@ platform=new Platform();
 screen=new Screen(640,360,2);
 
 #macro camera global.__camera
-__camera=new Camera();
+camera=new Camera();
 
 #macro input global.__input
-__input=new Input();
-
-#macro story global.__story
-__story=new Story();
+input=new Input();
 
 #macro dbug global.__dbug
-__dbug=new Dbug(); 
+dbug=new Dbug(); 
+
+randomize()

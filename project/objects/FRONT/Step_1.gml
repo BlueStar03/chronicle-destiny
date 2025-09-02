@@ -1,2 +1,2 @@
 input.update();
-story.update();
+//story.update();

@@ -14,3 +14,10 @@ nav:
 
 plugins:
   - jekyll-remote-theme
+
+nav:
+  - title: 🏠 Home
+    url: /
+  - title: 📝 Changelog
+    url: /changelog
+

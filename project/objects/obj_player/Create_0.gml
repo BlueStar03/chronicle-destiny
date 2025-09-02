@@ -19,7 +19,7 @@ z=0;
 camera.focus=self
 camera.mode="orbit";
 
-story.dialog.set_player_character(self);
+//story.dialog.set_player_character(self);
 model= import_obj_ext("character.obj",vformat);
 texture=sprite_get_texture(spr_character,1);
 

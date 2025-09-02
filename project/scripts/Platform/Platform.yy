@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"sys_platform",
+  "%Name":"Platform",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"sys_platform",
+  "name":"Platform",
   "parent":{
     "name":"SYSTEM",
     "path":"folders/Code/SYSTEM.yy",
