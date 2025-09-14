@@ -1,9 +1,9 @@
-/// @function import_obj_ext(filename, vertex_format, scale=1, up="y", front="-z", right="x")
+/// @function import_obj(filename, vertex_format, scale=1, up="y", front="-z", right="x")
 /// @desc Loads an OBJ and maps OBJ axes into engine (Right=X, Up=Y, Front=Z) using the provided axis strings.
 ///       Axis strings can be "x","-x","y","-y","z","-z".
 ///       Positions are scaled by `scale`; normals are remapped but NOT scaled.
 ///       UV V is flipped (1 - v) by default; change if your pipeline differs.
-function import_obj_ext(filename, vertex_format, scale=32, up="x", front="-y", right="z")
+function import_obj(filename, vertex_format, scale=32, up="x", front="-y", right="z")
 {
     // --- helpers ---------------------------------------------------
     var __axis_idx_sign = function(ax) {

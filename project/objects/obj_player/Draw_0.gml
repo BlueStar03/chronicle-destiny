@@ -5,4 +5,4 @@
 
 //matrix_set(matrix_world,matrix_build_identity());
 
-draw_model(model,texture,x,y,z,0,0,-facing-90);
+draw_model(model,texture,x,y,z,0,0,facing);

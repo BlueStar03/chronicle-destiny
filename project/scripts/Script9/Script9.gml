@@ -1,4 +1,4 @@
-function import_obj(filename, vertex_format) {
+function import_obj_(filename, vertex_format=vformat) {
     var buffer = buffer_load(filename);
     var content_string = buffer_read(buffer, buffer_text);
     buffer_delete(buffer);

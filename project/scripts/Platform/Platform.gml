@@ -24,7 +24,14 @@ function Platform() constructor {
     is_YYC     = function() { return compiled; };
   
   toString =function (){
-    return type;
+    var _s="ERROR"
+    switch (type) {
+      case platform_type.DESKTOP:  _s="Desktop"; break;
+      case platform_type.HTML5:  _s="Web"; break;
+      case platform_type.MOBILE:  _s="Mobile"; break;
+      default: _s="ERROR"; break;
+    } 
+    return _s;
   }
   init();  
 }

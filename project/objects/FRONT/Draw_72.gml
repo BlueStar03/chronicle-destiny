@@ -1,4 +1,4 @@
-camera.draw();
+CAMERA.draw();
 
 
 

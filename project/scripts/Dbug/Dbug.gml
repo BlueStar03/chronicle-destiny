@@ -1,22 +1,26 @@
 function Dbug() constructor{
-  
+  system={
+    platform:PLATFORM,
+    controller:"ERROR",
+
+    draw:function(){
+		draw_set_halign(fa_left);
+		draw_set_valign(fa_top);
+    draw_text_outline(SCREEN.topleft.x+1,SCREEN.topleft.y+1,platform,PLATFORM.color)
+},
+  }
   
   build={
     draw:function (){
       draw_set_halign(fa_left);
       draw_set_valign(fa_bottom)
-draw_text_outline(screen.bottomleft.x+1,screen.bottomleft.y-1,VERSION)
+      draw_text_outline(SCREEN.bottomleft.x+1,SCREEN.bottomleft.y-1,VERSION)
     }
   }
   
 	draw=function(){
 		draw_set_font(fnt_dbug);
-		draw_set_halign(fa_left);
-		draw_set_valign(fa_bottom);
-		var xx=0;
-		var yy= window_get_height();
-		//draw_text_outline(xx,yy,nVERSION)
-    draw_text_outline(100,100,platform,platform.color)
+    system.draw();
     build.draw();
 	}
 

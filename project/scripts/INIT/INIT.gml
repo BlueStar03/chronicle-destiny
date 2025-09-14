@@ -1,3 +1,5 @@
+
+// VERSION
 #macro vMAJOR 0
 #macro vMINOR 1
 #macro vPATCH 0
@@ -11,7 +13,7 @@
 #macro	c_random make_color_rgb(irandom(255),irandom(255),irandom(255))
 #macro c_cornflowerblue #6495ed
 
-// GPU INIT
+// GPU
 gpu_set_ztestenable(true);
 gpu_set_zwriteenable(true);
 gpu_set_alphatestenable(true);
@@ -20,20 +22,17 @@ gpu_set_cullmode(cull_noculling);
 
 
 //SYSTEM
+#macro PLATFORM global.__platform
+PLATFORM=new Platform();
 
-#macro platform global.__platform
-platform=new Platform();
+#macro SCREEN global.__screen
+SCREEN=new Screen(640,360,2);
 
-#macro screen global.__screen
-screen=new Screen(640,360,2);
+#macro CAMERA global.__camera
+CAMERA=new Camera();
 
-#macro camera global.__camera
-camera=new Camera();
+#macro INPUT global.__input
+INPUT=new Input();
 
-#macro input global.__input
-input=new Input();
-
-#macro dbug global.__dbug
-dbug=new Dbug(); 
-
-randomize()
+#macro DBUG global.__dbug
+DBUG=new Dbug(); 
