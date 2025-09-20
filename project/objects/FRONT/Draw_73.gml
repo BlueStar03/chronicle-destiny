@@ -1,1 +1,3 @@
-shader_reset()
+
+shader_reset();
+

@@ -1,6 +1,6 @@
 // Get Input
-hsp = INPUT.horizontal;
-vsp = INPUT.vertical;
+var hsp = INPUT.horizontal;
+var vsp = INPUT.vertical;
 
 //make it relative to the camera
 var input_dir = (point_direction(0,0,hsp,vsp))+90;
@@ -49,3 +49,9 @@ if !INPUT.dialog{
 
 if keyboard_check_released(vk_tab){CAMERA.snap=!CAMERA.snap}
   
+DBUG.trace.add_coord("pos",x,y,z,"omb");
+
+
+
+
+

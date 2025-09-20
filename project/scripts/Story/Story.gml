@@ -1,86 +1,105 @@
+enum think_states { st1,st2,st3,st4,st5 }
+
+
+//*******************************************************************************************************
+
 
 function Dialog() constructor {
-  
+
+
   think=new Think();
   speak=new Speak();
   listen=new Listen();
+  
   
   player_character=noone;
   set_player_character=function(id){
     player_character=id
   }
-update=function(){
+  
+  update=function(){
   if player_character!=noone{
         think.update();
     }
 
+  } 
+ 
+  draw=function(){
+    if player_character!=noone{
+      think.draw();
+      speak.draw();
+      listen.draw();
+
+    }   
   }
- 
- 
-draw=function(){
-  if player_character!=noone{
-    think.draw();
   
-  }   
-}
+
 }
 //**************************************************************************
 
 function Think() constructor {
   on=false;
+  timer=0;
   
   update=function(){
-  if input.dialog{on=true;}else{on=false}
-  if on{
-  
-    
-    }  
+    if INPUT.dialog{on=true;}else{on=false}
+    if on{
+    timer++
+      
+      }else{
+        if timer>0{
+           timer=0;}
+      }
     
     
   }  
  
-draw=function(){
+  draw=function(){
+    if on {
+        var radius=128;
+        var center_x=SCREEN.center.x;
+        var center_y=SCREEN.center.y;
+        var count = 3
+        var step=360/count;
+        var start=90;
   
-   if on {
-      var radius=128;
-      var center_x=screen.center.x;
-      var center_y=screen.center.y;
-      var count = 3
-      var step=360/count;
-      var start=90;
-
-      for (var i=0; i<count;i++){
-        var ang=start+i*step;
-        var px=center_x+lengthdir_x(radius,ang)
-        var py=center_y+lengthdir_y(radius,ang)
-        draw_sprite(spr_dialog,i,px,py);
-      }
-  } 
-}
+        for (var i=0; i<count;i++){
+          var ang=start+i*step;
+          var px=center_x+lengthdir_x(radius,ang)
+          var py=center_y+lengthdir_y(radius,ang)
+          draw_sprite(spr_dialog,i,px,py);
+        }
+    } 
+    draw_text_outline(10,20,timer)
+  }
 }
 
 /// ************************************************************************
 function Speak() constructor {
+  on=false;
   update=function(){
     
   }  
  
-draw=function(){
-  
-  
+  draw=function(){
+    if on{
+      draw_dialogbox("player")
+    }
   } 
 }
 
 //**************************************************************************
 
 function Listen() constructor {
+  on=false;
   update=function(){
     
   }  
  
-draw=function(){
-  
-  
+  draw=function(){
+    if on{
+      draw_dialogbox("npc")
+    }
   } 
 }
 
@@ -89,16 +108,32 @@ draw=function(){
 
 
 function Story() constructor {
+  player_character=noone;
+
   
   dialog=new Dialog()
+  
+  set_player_character=function(id){
+    player_character=id
+    dialog.set_player_character(player_character)
+  }
  
-update=function(){
-    dialog.update()
+  update=function(){
+      dialog.update()
   }  
  
-draw=function(){
-  dialog.draw()
+  draw=function(){
+    dialog.draw()
   }   
+  
+  draws=function(){
+    gpu_set_depth(-1);
+    draw_sprite(Sprite3,0,100,100);
+    draw_circle(100,100,50,false);
+    draw_text(100,100,"hello,World!");
+    
+  }
+  
 }
 
 

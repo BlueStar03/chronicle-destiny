@@ -68,3 +68,16 @@ function rollover_angle(angle, degrees = true) {
         return rollover(angle, 0, pi * 2);
     }
 }
+
+function singleton(){
+  if (instance_number(object_index) > 1) { instance_destroy(); exit; }
+}
+
+#macro fa_same -1
+
+function draw_set_talign(halign=fa_same,valign=fa_same){
+  if halign==fa_same{halign=draw_get_halign();}
+  if valign==fa_same{valign=draw_get_valign();} 
+  draw_set_halign(halign);
+  draw_set_valign(valign);
+}

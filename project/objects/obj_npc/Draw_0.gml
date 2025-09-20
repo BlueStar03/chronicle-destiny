@@ -1,0 +1,1 @@
+draw_model(model,texture,x,y,z,0,0,facing);

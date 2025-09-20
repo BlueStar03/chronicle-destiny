@@ -1,4 +1,4 @@
-CAMERA.update();
+
 
 
 var ele= keyboard_check(vk_pageup)-keyboard_check(vk_pagedown)

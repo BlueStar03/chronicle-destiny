@@ -28,8 +28,8 @@ function Camera() constructor{
   free = { pitch: 0 , yaw: 0, roll: 0 };
 	snap=true;
 	
-	pro_mat = matrix_build_projection_perspective_fov(45, window_get_width() / window_get_height(), 1, 32000);
-	//pro_mat = matrix_build_projection_ortho( (window_get_width()/2) , (window_get_height()/2), 1, 32000);
+	//pro_mat = matrix_build_projection_perspective_fov(45, window_get_width() / window_get_height(), 1, 32000);
+	pro_mat = matrix_build_projection_ortho( (SCREEN.width/2) , (SCREEN.height/2), 1, 32000);
 	
 
 	update = function() {

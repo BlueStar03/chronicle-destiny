@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"draw_ring_menu",
   "parent":{
-    "name":"Code",
-    "path":"folders/Code.yy",
+    "name":"SYSTEM",
+    "path":"folders/Code/SYSTEM.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

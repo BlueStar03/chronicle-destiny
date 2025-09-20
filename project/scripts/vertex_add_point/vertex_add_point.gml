@@ -3,7 +3,7 @@
 ///       Axis strings can be "x","-x","y","-y","z","-z".
 ///       Positions are scaled by `scale`; normals are remapped but NOT scaled.
 ///       UV V is flipped (1 - v) by default; change if your pipeline differs.
-function import_obj(filename, vertex_format, scale=32, up="x", front="-y", right="z")
+function import_obj_ext(filename, vertex_format=vformat, scale=32, up="x", front="-y", right="z")
 {
     // --- helpers ---------------------------------------------------
     var __axis_idx_sign = function(ax) {
