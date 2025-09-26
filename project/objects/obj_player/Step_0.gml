@@ -1,6 +1,6 @@
 // Get Input
-var hsp = INPUT.horizontal;
-var vsp = INPUT.vertical;
+var hsp = INPUT.joy_left.horizontal.current;
+var vsp = INPUT.joy_left.vertical.current;
 
 //make it relative to the camera
 var input_dir = (point_direction(0,0,hsp,vsp))+90;
@@ -43,9 +43,9 @@ if (hsp != 0 || vsp != 0) {
 }
 
 //camera rotation 
-if !INPUT.dialog{
-  CAMERA.rotate_orbit(INPUT.rotate);
-}
+//if !INPUT.dialog{
+  //CAMERA.rotate_orbit(INPUT.joy_right.horizontal.current);
+//}
 
 if keyboard_check_released(vk_tab){CAMERA.snap=!CAMERA.snap}
   

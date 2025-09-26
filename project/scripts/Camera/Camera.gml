@@ -24,7 +24,7 @@ function Camera() constructor{
   };
   
    
-	orbit = { dir: 45, dist: 256, ele: 35.264 };//30,45
+	orbit = { dir: 45, dist: 256, ele: 35.264 };//30,45, 35.264
   free = { pitch: 0 , yaw: 0, roll: 0 };
 	snap=true;
 	

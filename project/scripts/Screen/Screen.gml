@@ -42,7 +42,7 @@ function Screen(w,h,s)constructor{
     var _display_height=display_get_height();
     aspect_ratio=_display_width/_display_height;
     
-    if PLATFORM.type!=platform_type.HTML5{
+    if PLATFORM.type!=platform_type.web{
       //makes sure the display height divides neatly into game height
       if (_display_height mod height != 0){
         var _d=round(_display_height/height);
@@ -55,7 +55,7 @@ function Screen(w,h,s)constructor{
       max_scale=floor(_display_width/width);
       if scale>max_scale{scale=max_scale;}
     }
-    if PLATFORM.type!=platform_type.DESKTOP{scale=1;max_scale=1};//
+    if PLATFORM.type!=platform_type.desktop{scale=1;max_scale=1};//
     //if platform.type=="HTML5"{scale=1;max_scale=1;/*width=640; height=360*/};//
     
   }
@@ -70,8 +70,4 @@ function Screen(w,h,s)constructor{
   }
   init();
   set_resolution();
-  
-  
-  
-
 }

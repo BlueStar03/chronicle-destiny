@@ -32,9 +32,8 @@ function Dialog() constructor {
 
     }   
   }
-  
-
 }
+
 //**************************************************************************
 
 function Think() constructor {
@@ -42,16 +41,13 @@ function Think() constructor {
   timer=0;
   
   update=function(){
-    if INPUT.dialog{on=true;}else{on=false}
-    if on{
-    timer++
-      
-      }else{
-        if timer>0{
-           timer=0;}
-      }
-    
-    
+    //if INPUT.dialog{on=true;}
+    //if on{
+      //if !INPUT.dialog{
+        //speak.on=true
+        //on=false
+      //}
+    //}
   }  
  
   draw=function(){

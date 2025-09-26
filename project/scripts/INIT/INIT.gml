@@ -1,4 +1,3 @@
-
 // VERSION
 #macro vMAJOR 0
 #macro vMINOR 1
@@ -18,17 +17,21 @@
 gpu_set_ztestenable(true);
 gpu_set_zwriteenable(true);
 gpu_set_alphatestenable(true);
-gpu_set_texrepeat(true);
-gpu_set_cullmode(cull_noculling);
 
-
+gpu_set_texrepeat(true)
 
 //SYSTEM
+#macro DATA global.__data
+DATA=new Data(true);
+
+
 #macro PLATFORM global.__platform
 PLATFORM=new Platform();
 
+var DSET=DATA.settings.sys_display
+
 #macro SCREEN global.__screen
-SCREEN=new Screen(640,360,2);
+SCREEN=new Screen(DSET.width,DSET.height,DSET.scale);
 
 #macro CAMERA global.__camera
 CAMERA=new Camera();

@@ -81,3 +81,14 @@ function draw_set_talign(halign=fa_same,valign=fa_same){
   draw_set_halign(halign);
   draw_set_valign(valign);
 }
+
+function angle_delta(a, b, rad=false) {
+  var fc=rad?2*pi:360, hc=rad?pi:180
+  //if rad {fc=2*pi;hc=pi}
+
+        var d = (a - b) mod fc;
+        if (d > hc) d -= fc;
+        if (d < -hc) d += fc;
+        return d;
+
+}
