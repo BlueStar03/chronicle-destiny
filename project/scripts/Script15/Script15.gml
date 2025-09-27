@@ -1,18 +1,49 @@
-function Prism(spr)constructor{
-  self.spr=spr;
-  update=function(){
-
+function Prism(spr,num=8)constructor{
+  index=spr;
+  image=0;
+  sub=num;
+  sub_angle=360/num	
+  anim_length=sprite_get_number(index)/num;
+  anim_frame=0;
+  anim_speed=0.25;
+  anim_angle=0;
+  
+  update=function(dir=0){
+    var zdir=rollover(dir+(CAMERA.orbit.dir-90),0,360);
+    zdir=rollover(zdir,0,360);
+    anim_frame+=anim_speed;
+    if anim_frame>=anim_length{anim_frame=0;}
+    anim_angle=(round(zdir/sub_angle));
+    image=(anim_angle*anim_length)+anim_frame;
   }
-  draw=function (x,y,){
-    draw_sprite(spr,0,x,y)
+  
+  draw=function (x,y,z=0){
+    draw_sprite_billboard(index,image,x,y,z);
+  }
+  
+  set_sprite=function(spr){
+    index=spr
+    anim_length=sprite_get_number(index)/sub;
   }
 }
 
-function draw_sprite_billboard(sprite,subimg,x,y,z,xrot=0,yrot=0,zrot=0,xscale=1,yscale=1,rot=0,color=c_white,alpha=1){
+
+
+
+function draw_sprite_billboard(sprite,subimg,x,y,z,xscale=1,yscale=1,rot=0,color=c_white,alpha=1){
+  matrix_set(matrix_world, matrix_build(x, y, z, -90, -CAMERA.orbit.dir+90, 0, 1, 1, 1.224745));
+  draw_sprite_ext( sprite, subimg, 0, 0, xscale, yscale, rot, color, alpha );
+  matrix_set(matrix_world, matrix_build_identity());
+}
+
+function draw_sprite_card(sprite,subimg,x,y,z,xrot=0,yrot=0,zrot=0,xscale=1,yscale=1,rot=0,color=c_white,alpha=1){
 	matrix_set(matrix_world, matrix_build(x, y, z, -90+xrot, yrot, zrot, 1, 1, 1));
 	draw_sprite_ext( sprite, subimg, 0, 0, xscale, yscale, rot, color, alpha );
 	matrix_set(matrix_world, matrix_build_identity());
 }
+
+
+
 
 function Prism_(sprite,shadow=-1,num=8)constructor{
 	index=sprite;

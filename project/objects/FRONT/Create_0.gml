@@ -1,5 +1,3 @@
-singleton();
-
 var ts=16;
 var td=ts*2;
 var zv=0.1

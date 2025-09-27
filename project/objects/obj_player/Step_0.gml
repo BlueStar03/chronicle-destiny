@@ -42,14 +42,23 @@ if (hsp != 0 || vsp != 0) {
 
 }
 
+if hsp!=0 or vsp!=0{
+  spr.set_sprite(spr_test_walk)
+}else{spr.set_sprite(spr_test_stand)}
+
 //camera rotation 
 //if !INPUT.dialog{
   //CAMERA.rotate_orbit(INPUT.joy_right.horizontal.current);
 //}
 
+CAMERA.rotate_orbit(INPUT.joy_right.horizontal.current);
+
 if keyboard_check_released(vk_tab){CAMERA.snap=!CAMERA.snap}
   
 DBUG.trace.add_coord("pos",x,y,z,"omb");
+
+
+
 
 
 

@@ -25,7 +25,7 @@ function Data(reset = false) constructor {
       sys_display: {
           width: 640,
           height: 360,
-          scale: 1,
+          scale: 2,
           fullscreen: false
       },
       sys_input: {
