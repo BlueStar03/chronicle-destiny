@@ -22,7 +22,7 @@ gpu_set_texrepeat(true)
 
 //SYSTEM
 #macro DATA global.__data
-DATA=new Data(true);
+DATA=new Data();
 
 
 #macro PLATFORM global.__platform

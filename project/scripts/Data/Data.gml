@@ -11,7 +11,7 @@ function Data(reset = false) constructor {
           var settings_data = file_text_read_string(settings_file);
           settings = json_parse(settings_data);
           file_text_close(settings_file);
-      }
+      }else{foo()}
   };
 
   delete_all = function() {
@@ -21,11 +21,15 @@ function Data(reset = false) constructor {
   }
 
   // Reset settings to default
-  settings = {
+
+  };
+  
+  foo=function (){
+      settings = {
       sys_display: {
           width: 640,
           height: 360,
-          scale: 2,
+          scale: 1,
           fullscreen: false
       },
       sys_input: {
@@ -43,7 +47,7 @@ function Data(reset = false) constructor {
           collision: true,
       }
     };
-  };
+  }
 
   init = function(reset) {
       if (reset) {
