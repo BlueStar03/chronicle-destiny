@@ -11,7 +11,7 @@ title: Chronicle Destiny - Alpha
     <p>Your browser doesn't support HTML5 canvas.</p>
   </canvas>
 </div>
-<script type="text/javascript" src="html5game/chronicle-destiny.js?cachebust=1300484054"></script>
+<script type="text/javascript" src="html5game/chronicle-destiny.js?cachebust=1078616502"></script>
 <script>window.onload = GameMaker_Init;</script>  
 
 ---
