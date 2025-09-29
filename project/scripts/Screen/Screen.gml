@@ -66,7 +66,8 @@ function Screen(w,h,s)constructor{
     window_set_size(width*scale,height*scale);
     window_set_fullscreen(false);
     set_anchors();
-    window_center();
+    if PLATFORM.type==platform_type.desktop{
+      window_center();}
   }
   init();
   set_resolution();
